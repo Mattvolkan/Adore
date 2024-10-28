@@ -11,7 +11,7 @@
     --bg-color: #F2EAE4;
     --text-color: #591902;
     --main-color: #F2E394;
-    --big-font: clamp(2.5rem, 5vw, 5.5rem);
+    --big-font: clamp(2.5rem, 5vw, 6rem);
     --p-font: clamp(1rem, 2vw, 1.1rem);
 }
 
@@ -19,6 +19,18 @@ body {
     background: var(--bg-color);
     color: var(--text-color);
     overflow-x: hidden;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 5%;
+    margin-bottom: 2rem;
+    background: var(--bg-color);
 }
 
 .header {
@@ -62,6 +74,16 @@ body {
 }
 
 .home {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem 5%;
+    text-align: center;
+}
+
+.home {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -70,6 +92,16 @@ body {
     padding: 2rem 5%;
     text-align: center;
     backdrop-filter: none;
+}
+
+.main-title {
+    font-size: var(--big-font);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    max-width: 800px;
+    color: var(--text-color);
+    text-shadow: none;
 }
 
 .main-title {
@@ -123,6 +155,15 @@ body {
     color: var(--text-color);
 }
 
+.circular-text {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    width: 100px;
+    height: 100px;
+    animation: rotate 20s linear infinite;
+}
+
 @keyframes rotate {
     from {
         transform: rotate(0deg);
@@ -130,6 +171,20 @@ body {
     to {
         transform: rotate(360deg);
     }
+}
+
+.circular-text svg {
+    width: 100%;
+    height: 100%;
+}
+
+.circular-text path {
+    fill: none;
+}
+
+.circular-text text {
+    font-size: 9px;
+    fill: var(--text-color);
 }
 
 .about {
@@ -156,5 +211,9 @@ body {
     .small-image, .large-image {
         width: 100%;
         height: auto;
+    }
+
+    .circular-text {
+        display: none;
     }
 }
